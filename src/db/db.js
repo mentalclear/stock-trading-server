@@ -5,8 +5,7 @@ const DB_NAME = 'stock-trading';
 export const db = {
     _dbClient: null,
     connect: async function(url) {
-        const client = await MongoClient.connect(url, {
-            poolSize: 10,
+        const client = await MongoClient.connect(url, {            
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
