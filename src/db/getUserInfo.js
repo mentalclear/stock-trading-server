@@ -2,8 +2,8 @@ import { getUser } from './getUser';
 import { getCurrentSharePrice } from './getCurrentSharePrice';
 
 
-export const getUserInfo = async () => {
-    const currentSharePrice = await getCurrentSharePrice();
+export const getUserInfo = async (stockHistory) => {
+    const currentSharePrice = await getCurrentSharePrice(stockHistory);
     const  { cashValue, numberOfSharesOwned } = await getUser();
     const sharesValue = currentSharePrice * numberOfSharesOwned;
     return {
